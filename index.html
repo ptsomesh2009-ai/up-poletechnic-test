@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>JEECUP 2026 - Trigonometry Mock Test Practice Set</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,26 +12,26 @@
         .no-select { user-select: none; }
     </style>
 </head>
-<body class="bg-gray-100 h-screen flex flex-col overflow-hidden">
+<body class="bg-gray-100 h-screen flex flex-col overflow-hidden select-none">
 
-    <header class="bg-blue-800 text-white px-6 py-3 flex justify-between items-center shadow-md shrink-0">
+    <header class="bg-blue-800 text-white px-4 md:px-6 py-3 flex justify-between items-center shadow-md shrink-0">
         <div class="flex items-center space-x-3">
-            <i class="fa-solid fa-graduation-cap text-2xl text-yellow-400"></i>
+            <i class="fa-solid fa-graduation-cap text-xl md:text-2xl text-yellow-400"></i>
             <div>
-                <h1 class="text-lg font-bold tracking-wide">JEECUP 2026 Practice Portal</h1>
-                <p class="text-xs text-blue-200">Trigonometry High-Yield Medium to Hard PYQs</p>
+                <h1 class="text-sm md:text-lg font-bold tracking-wide">JEECUP 2026 Practice Portal</h1>
+                <p class="text-[10px] md:text-xs text-blue-200">Trigonometry High-Yield Medium to Hard PYQs</p>
             </div>
         </div>
-        <div id="timerBox" class="bg-blue-900 border border-blue-700 px-4 py-1.5 rounded-lg flex items-center space-x-2 text-md font-semibold font-mono">
+        <div id="timerBox" class="bg-blue-900 border border-blue-700 px-3 py-1 md:px-4 md:py-1.5 rounded-lg flex items-center space-x-2 text-xs md:text-md font-semibold font-mono">
             <i class="fa-regular fa-clock text-yellow-400 animate-pulse"></i>
-            <span>Time Left: </span>
-            <span id="timerDisplay" class="text-yellow-300 text-lg">60:00</span>
+            <span class="hidden sm:inline">Time Left: </span>
+            <span id="timerDisplay" class="text-yellow-300 text-sm md:text-lg">60:00</span>
         </div>
     </header>
 
     <main class="flex-1 flex overflow-hidden">
         
-        <section class="w-5/12 bg-gray-200 border-r-4 border-gray-300 flex flex-col relative h-full">
+        <section class="hidden lg:flex lg:w-4/12 xl:w-5/12 bg-gray-200 border-r-4 border-gray-300 flex-col relative h-full">
             <div class="bg-gray-800 text-white px-4 py-2 flex items-center justify-between shadow shrink-0">
                 <span class="text-xs font-bold uppercase tracking-wider text-gray-400"><i class="fa-solid fa-pen-nib mr-1"></i> Digital Scratchpad</span>
                 <div class="flex items-center space-x-3">
@@ -62,93 +61,93 @@
             </div>
         </section>
 
-        <section class="w-7/12 flex flex-col h-full bg-gray-50">
-            <div class="bg-white border-b px-6 py-2.5 flex justify-between items-center text-sm font-medium shadow-sm shrink-0">
+        <section class="w-full lg:w-8/12 xl:w-7/12 flex flex-col h-full bg-gray-50">
+            <div class="bg-white border-b px-4 md:px-6 py-2.5 flex justify-between items-center text-xs md:text-sm font-medium shadow-sm shrink-0">
                 <div class="flex space-x-4">
                     <span class="text-emerald-600"><i class="fa-solid fa-circle-check"></i> Answered: <span id="statAnswered">0</span></span>
                     <span class="text-orange-500"><i class="fa-solid fa-circle-minus"></i> Unanswered: <span id="statUnanswered">50</span></span>
                 </div>
-                <div class="text-gray-500 text-xs font-semibold">
+                <div class="text-gray-500 text-[10px] md:text-xs font-semibold">
                     Pattern: UP JEECUP 4 Marks/Correct Option
                 </div>
             </div>
 
-            <div class="flex-1 overflow-y-auto p-8" id="testArea">
-                <div class="max-w-2xl mx-auto bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+            <div class="flex-1 overflow-y-auto p-4 md:p-8" id="testArea">
+                <div class="max-w-2xl mx-auto bg-white border border-gray-200 rounded-xl p-5 md:p-6 shadow-sm">
                     <div class="flex justify-between items-center mb-4 pb-2 border-b border-gray-100">
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded" id="questionNumberHeader">QUESTION 1 OF 50</span>
-                        <span class="text-gray-400 text-xs">Category: Trigonometry MCQ</span>
+                        <span class="bg-blue-100 text-blue-800 text-[10px] md:text-xs font-bold px-2.5 py-1 rounded" id="questionNumberHeader">QUESTION 1 OF 50</span>
+                        <span class="text-gray-400 text-[10px] md:text-xs">Category: Trigonometry MCQ</span>
                     </div>
 
-                    <div class="text-lg font-medium text-gray-800 mb-6 leading-relaxed" id="questionText">
+                    <div class="text-md md:text-lg font-medium text-gray-800 mb-6 leading-relaxed" id="questionText">
                         Loading problem...
                     </div>
 
                     <div class="space-y-3" id="optionsContainer">
-                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="flex-1 overflow-y-auto p-8 hidden" id="resultsArea">
-                <div class="max-w-3xl mx-auto bg-white border border-gray-200 rounded-xl p-8 shadow-sm text-center">
-                    <i class="fa-solid fa-square-poll-vertical text-5xl text-blue-600 mb-4"></i>
-                    <h2 class="text-2xl font-bold text-gray-800 mb-1">Performance Overview Analysis</h2>
-                    <p class="text-gray-500 mb-6">Your UP Polytechnic 2026 Trigonometry Mock Evaluation Summary Sheet</p>
+            <div class="flex-1 overflow-y-auto p-4 md:p-8 hidden" id="resultsArea">
+                <div class="max-w-3xl mx-auto bg-white border border-gray-200 rounded-xl p-6 md:p-8 shadow-sm text-center">
+                    <i class="fa-solid fa-square-poll-vertical text-4xl md:text-5xl text-blue-600 mb-4"></i>
+                    <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-1">Performance Overview Analysis</h2>
+                    <p class="text-xs md:text-gray-500 mb-6">Your UP Polytechnic 2026 Trigonometry Mock Evaluation Summary Sheet</p>
                     
-                    <div class="grid grid-cols-4 gap-4 mb-8">
-                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                            <div class="text-xs font-bold text-blue-700 uppercase">Total Score</div>
-                            <div class="text-2xl font-black text-blue-900 mt-1" id="resScore">0 / 200</div>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4 mb-8">
+                        <div class="bg-blue-50 p-3 md:p-4 rounded-lg border border-blue-100">
+                            <div class="text-[10px] md:text-xs font-bold text-blue-700 uppercase">Total Score</div>
+                            <div class="text-xl md:text-2xl font-black text-blue-900 mt-1" id="resScore">0 / 200</div>
                         </div>
-                        <div class="bg-emerald-50 p-4 rounded-lg border border-emerald-100">
-                            <div class="text-xs font-bold text-emerald-700 uppercase">Correct Options</div>
-                            <div class="text-2xl font-black text-emerald-900 mt-1" id="resCorrect">0</div>
+                        <div class="bg-emerald-50 p-3 md:p-4 rounded-lg border border-emerald-100">
+                            <div class="text-[10px] md:text-xs font-bold text-emerald-700 uppercase">Correct</div>
+                            <div class="text-xl md:text-2xl font-black text-emerald-900 mt-1" id="resCorrect">0</div>
                         </div>
-                        <div class="bg-red-50 p-4 rounded-lg border border-red-100">
-                            <div class="text-xs font-bold text-red-700 uppercase">Wrong Selections</div>
-                            <div class="text-2xl font-black text-red-900 mt-1" id="resWrong">0</div>
+                        <div class="bg-red-50 p-3 md:p-4 rounded-lg border border-red-100">
+                            <div class="text-[10px] md:text-xs font-bold text-red-700 uppercase">Wrong</div>
+                            <div class="text-xl md:text-2xl font-black text-red-900 mt-1" id="resWrong">0</div>
                         </div>
-                        <div class="bg-gray-100 p-4 rounded-lg border border-gray-200">
-                            <div class="text-xs font-bold text-gray-700 uppercase">Accuracy Rate</div>
-                            <div class="text-2xl font-black text-gray-900 mt-1" id="resAccuracy">0%</div>
+                        <div class="bg-gray-100 p-3 md:p-4 rounded-lg border border-gray-200">
+                            <div class="text-[10px] md:text-xs font-bold text-gray-700 uppercase">Accuracy</div>
+                            <div class="text-xl md:text-2xl font-black text-gray-900 mt-1" id="resAccuracy">0%</div>
                         </div>
                     </div>
 
-                    <h3 class="text-left font-bold text-gray-700 mb-3 border-b pb-2"><i class="fa-solid fa-list-check mr-1 text-blue-600"></i> Comprehensive Question Key Solutions Matrix</h3>
-                    <div class="grid grid-cols-5 gap-2 max-h-60 overflow-y-auto pr-2" id="solutionsGrid">
-                        </div>
+                    <h3 class="text-left font-bold text-sm md:text-gray-700 mb-3 border-b pb-2"><i class="fa-solid fa-list-check mr-1 text-blue-600"></i> Comprehensive Question Key Solutions Matrix</h3>
+                    <div class="grid grid-cols-3 sm:grid-cols-5 gap-2 max-h-60 overflow-y-auto pr-2" id="solutionsGrid">
+                    </div>
 
-                    <button onclick="window.location.reload();" class="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg transition shadow">
+                    <button onclick="window.location.reload();" class="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm py-2.5 px-6 rounded-lg transition shadow">
                         <i class="fa-solid fa-rotate-left mr-2"></i> Restart Challenge Practice Set
                     </button>
                 </div>
             </div>
 
-            <footer class="bg-white border-t px-6 py-4 flex justify-between items-center shrink-0 shadow-inner" id="footerNavControls">
-                <button id="btnPrev" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg text-sm font-semibold flex items-center transition disabled:opacity-40 disabled:cursor-not-allowed">
-                    <i class="fa-solid fa-arrow-left mr-2"></i> Back
+            <footer class="bg-white border-t px-4 md:px-6 py-4 flex justify-between items-center shrink-0 shadow-inner" id="footerNavControls">
+                <button id="btnPrev" class="px-3 py-2 md:px-4 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg text-xs md:text-sm font-semibold flex items-center transition disabled:opacity-40 disabled:cursor-not-allowed">
+                    <i class="fa-solid fa-arrow-left mr-1 md:mr-2"></i> Back
                 </button>
                 
                 <div class="relative">
-                    <button id="btnTogglePalette" class="px-4 py-2 bg-gray-100 border text-gray-700 hover:bg-gray-200 text-sm font-semibold rounded-lg flex items-center transition">
-                        <i class="fa-solid fa-table-cells-large mr-2 text-blue-600"></i> Jump to Question Panel
+                    <button id="btnTogglePalette" class="px-3 py-2 md:px-4 bg-gray-100 border text-gray-700 hover:bg-gray-200 text-xs md:text-sm font-semibold rounded-lg flex items-center transition">
+                        <i class="fa-solid fa-table-cells-large mr-1 md:mr-2 text-blue-600"></i> <span class="hidden sm:inline">Jump to </span>Panel
                     </button>
-                    <div id="paletteDropdown" class="absolute bottom-12 left-1/2 -translate-x-1/2 bg-white border rounded-xl shadow-xl p-4 w-80 hidden z-50">
-                        <div class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2 border-b pb-1 flex justify-between">
+                    <div id="paletteDropdown" class="absolute bottom-14 left-1/2 -translate-x-1/2 bg-white border rounded-xl shadow-xl p-4 w-72 md:w-80 hidden z-50">
+                        <div class="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2 border-b pb-1 flex justify-between">
                             <span>Question Navigation Map</span>
                             <span class="text-gray-500">50 Total items</span>
                         </div>
                         <div class="grid grid-cols-5 gap-1.5 max-h-48 overflow-y-auto p-1" id="paletteGrid">
-                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="flex space-x-2">
-                    <button id="btnNext" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold flex items-center transition">
-                        Next <i class="fa-solid fa-arrow-right ml-2"></i>
+                    <button id="btnNext" class="px-3 py-2 md:px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs md:text-sm font-semibold flex items-center transition">
+                        Next <i class="fa-solid fa-arrow-right ml-1 md:mr-2"></i>
                     </button>
-                    <button id="btnSubmitTest" class="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-bold flex items-center transition shadow">
-                        <i class="fa-solid fa-square-check mr-2"></i> Submit Paper
+                    <button id="btnSubmitTest" class="px-4 py-2 md:px-5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs md:text-sm font-bold flex items-center transition shadow">
+                        <i class="fa-solid fa-square-check mr-1 md:mr-2"></i> Submit
                     </button>
                 </div>
             </footer>
@@ -156,7 +155,6 @@
     </main>
 
     <script>
-        // JEECUP 50 Trigonometry Questions Database Dataset Array mapping
         const questions = [
             { id: 1, text: "If \\(\\sin\\theta = 3/5\\) then \\(\\cos\\theta\\) is:", options: { A: "3/4", B: "4/5", C: "5/4", D: "2/5" }, answer: "B" },
             { id: 2, text: "\\(\\tan 45^{\\circ} + \\cot 45^{\\circ} =\\)", options: { A: "0", B: "1", C: "2", D: "4" }, answer: "C" },
@@ -164,7 +162,7 @@
             { id: 4, text: "\\(\\sin^{2}30^{\\circ} + \\cos^{2}60^{\\circ} =\\)", options: { A: "1/2", B: "1", C: "1/4", D: "2" }, answer: "A" },
             { id: 5, text: "If \\(\\tan\\theta = 1\\) then \\(\\theta =\\)", options: { A: "30°", B: "45°", C: "60°", D: "90°" }, answer: "B" },
             { id: 6, text: "\\(\\sin 60^{\\circ}\\cos 30^{\\circ} + \\cos 60^{\\circ}\\sin 30^{\\circ} =\\)", options: { A: "1/2", B: "√3/2", C: "1", D: "0" }, answer: "C" },
-            { id: 7, text: "\\(\\frac{1-\\cos 2\\theta}{2}\\) equals:", options: { A: "sin²θ", B: "cos²θ", C: "tan²θ", D: "cot²θ" }, answer: "A" },
+            { id: 7, text: "\\(\\frac{1-\cos 2\\theta}{2}\\) equals:", options: { A: "sin²θ", B: "cos²θ", C: "tan²θ", D: "cot²θ" }, answer: "A" },
             { id: 8, text: "If \\(\\cosec\\theta = 5/3\\) then \\(\\cot\\theta =\\)", options: { A: "3/4", B: "4/3", C: "5/4", D: "4/5" }, answer: "B" },
             { id: 9, text: "\\(\\tan 30^{\\circ} \\times \\tan 60^{\\circ} =\\)", options: { A: "0", B: "1", C: "2", D: "3" }, answer: "B" },
             { id: 10, text: "\\(\\sin 90^{\\circ} + \\cos 0^{\\circ} =\\)", options: { A: "0", B: "1", C: "2", D: "4" }, answer: "C" },
@@ -210,21 +208,20 @@
             { id: 50, text: "\\(\\sin^{2}\\theta + \\cos^{2}\\theta =\\)", options: { A: "0", B: "1", C: "2", D: "tan θ" }, answer: "B" }
         ];
 
-        // State Machine Controllers
         let currentIdx = 0;
         let userResponses = new Array(questions.length).fill(null);
-        let testTimeSeconds = 60 * 60; // 60 Minutes standard practice countdown allocation
+        let testTimeSeconds = 60 * 60; 
         let countdownInterval = null;
 
-        // Interactive Drawing Canvas Element Variables
         const canvas = document.getElementById('scratchpad');
-        const ctx = canvas.getContext('2d');
+        let ctx = null;
+        if (canvas) { ctx = canvas.getContext('2d'); }
+        
         let drawingMode = false;
-        let activeTool = 'pen'; // pen or eraser
+        let activeTool = 'pen'; 
         let brushColor = '#000000';
         let brushWidth = 4;
 
-        // Initialization lifecycle bootstrap
         window.addEventListener('DOMContentLoaded', () => {
             initCanvas();
             renderQuestion(currentIdx);
@@ -232,16 +229,18 @@
             initCountdown();
             updateStatusBar();
 
-            // Setup Global Event Handlers for UI Buttons
             document.getElementById('btnNext').addEventListener('click', () => navigate(1));
             document.getElementById('btnPrev').addEventListener('click', () => navigate(-1));
-            document.getElementById('clearCanvas').addEventListener('click', resetCanvas);
-            document.getElementById('toolPen').addEventListener('click', () => toggleTool('pen'));
-            document.getElementById('toolEraser').addEventListener('click', () => toggleTool('eraser'));
-            document.getElementById('brushSize').addEventListener('change', (e) => brushWidth = parseInt(e.target.value));
+            
+            if(canvas) {
+                document.getElementById('clearCanvas').addEventListener('click', resetCanvas);
+                document.getElementById('toolPen').addEventListener('click', () => toggleTool('pen'));
+                document.getElementById('toolEraser').addEventListener('click', () => toggleTool('eraser'));
+                document.getElementById('brushSize').addEventListener('change', (e) => brushWidth = parseInt(e.target.value));
+            }
+            
             document.getElementById('btnSubmitTest').addEventListener('click', evaluateTestPaper);
             
-            // Popover dropdown toggle navigation mapping
             const btnPalette = document.getElementById('btnTogglePalette');
             const paletteDropdown = document.getElementById('paletteDropdown');
             btnPalette.addEventListener('click', (e) => {
@@ -251,7 +250,6 @@
             document.addEventListener('click', () => paletteDropdown.classList.add('hidden'));
             paletteDropdown.addEventListener('click', (e) => e.stopPropagation());
 
-            // Bind Color picker events
             document.querySelectorAll('.color-pick').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     document.querySelectorAll('.color-pick').forEach(b => b.classList.remove('scale-110', 'border', 'border-white'));
@@ -262,25 +260,22 @@
             });
         });
 
-        // Setup drawing sheet sizes correctly responsive mapping
         function initCanvas() {
+            if(!canvas || !ctx) return;
             const container = canvas.parentElement;
             canvas.width = container.clientWidth;
             canvas.height = container.clientHeight;
             
-            // Re-initialize settings properties on canvas contexts context context context
             ctx.lineCap = 'round';
             ctx.lineJoin = 'round';
 
-            // Desktop Mouse Events Handling
             canvas.addEventListener('mousedown', startDrawing);
             canvas.addEventListener('mousemove', drawStroke);
             canvas.addEventListener('mouseup', stopDrawing);
             canvas.addEventListener('mouseleave', stopDrawing);
 
-            // Mobile Tablet Touch Events Handling Integration
-            canvas.addEventListener('touchstart', (e) => { e.preventDefault(); startDrawing(e.touches[0]); });
-            canvas.addEventListener('touchmove', (e) => { e.preventDefault(); drawStroke(e.touches[0]); });
+            canvas.addEventListener('touchstart', (e) => { e.preventDefault(); startDrawing(e.touches[0]); }, { passive: false });
+            canvas.addEventListener('touchmove', (e) => { e.preventDefault(); drawStroke(e.touches[0]); }, { passive: false });
             canvas.addEventListener('touchend', stopDrawing);
 
             window.addEventListener('resize', debouncedResize);
@@ -290,10 +285,11 @@
         function debouncedResize() {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(() => {
-                const tempImg = ctx.getImageData(0,0,canvas.width,canvas.height);
-                const prevW = canvas.width;
-                const prevH = canvas.height;
+                if(!canvas || !ctx) return;
                 const container = canvas.parentElement;
+                if(container.clientWidth === 0) return; // Hidden elements tracking bypass
+                
+                const tempImg = ctx.getImageData(0,0,canvas.width,canvas.height);
                 canvas.width = container.clientWidth;
                 canvas.height = container.clientHeight;
                 ctx.lineCap = 'round';
@@ -302,7 +298,6 @@
             }, 200);
         }
 
-        // Draw Mechanics Handlers
         function startDrawing(e) {
             drawingMode = true;
             ctx.beginPath();
@@ -314,14 +309,13 @@
             if (!drawingMode) return;
             const rect = canvas.getBoundingClientRect();
             ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
-            
             ctx.strokeStyle = (activeTool === 'eraser') ? '#ffffff' : brushColor;
-            ctx.lineWidth = (activeTool === 'eraser') ? brushWidth * 4 : brushWidth;
+            ctx.lineWidth = (activeTool === 'eraser') ? brushWidth * 5 : brushWidth;
             ctx.stroke();
         }
 
         function stopDrawing() { drawingMode = false; }
-        function resetCanvas() { ctx.clearRect(0, 0, canvas.width, canvas.height); }
+        function resetCanvas() { if(ctx) ctx.clearRect(0, 0, canvas.width, canvas.height); }
 
         function toggleTool(tool) {
             activeTool = tool;
@@ -334,7 +328,6 @@
             }
         }
 
-        // Render target active core exam index content
         function renderQuestion(idx) {
             const q = questions[idx];
             document.getElementById('questionNumberHeader').innerText = `QUESTION ${idx + 1} OF ${questions.length}`;
@@ -346,7 +339,7 @@
             Object.entries(q.options).forEach(([key, value]) => {
                 const isChecked = userResponses[idx] === key;
                 const optWrapper = document.createElement('label');
-                optWrapper.className = `flex items-center p-4 border rounded-xl cursor-pointer transition no-select ${isChecked ? 'bg-blue-50 border-blue-400 font-medium' : 'bg-white border-gray-200 hover:bg-gray-50'}`;
+                optWrapper.className = `flex items-center p-3.5 md:p-4 border rounded-xl cursor-pointer transition no-select text-sm md:text-base ${isChecked ? 'bg-blue-50 border-blue-400 font-medium' : 'bg-white border-gray-200 hover:bg-gray-50'}`;
                 
                 optWrapper.innerHTML = `
                     <input type="radio" name="mcq_opt" value="${key}" ${isChecked ? 'checked' : ''} class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
@@ -354,19 +347,16 @@
                     <span class="text-gray-800">${value}</span>
                 `;
 
-                // Handle interactive changes
                 optWrapper.querySelector('input').addEventListener('change', () => {
                     userResponses[idx] = key;
                     updateStatusBar();
                     buildNavigationPalettes();
-                    // Visual re-highlight trigger render quickly
                     renderQuestion(idx);
                 });
 
                 container.appendChild(optWrapper);
             });
 
-            // Adjust navigation control limits
             document.getElementById('btnPrev').disabled = (idx === 0);
             if(idx === questions.length - 1) {
                 document.getElementById('btnNext').classList.add('hidden');
@@ -376,7 +366,6 @@
                 document.getElementById('btnSubmitTest').classList.add('hidden');
             }
 
-            // MathJax re-render cycle hook layout execution
             if (window.MathJax && MathJax.typesetPromise) {
                 MathJax.typesetPromise([container, document.getElementById('questionText')]);
             }
@@ -395,7 +384,6 @@
             document.getElementById('statUnanswered').innerText = questions.length - answered;
         }
 
-        // Build navigation buttons quick layout grids
         function buildNavigationPalettes() {
             const paletteGrid = document.getElementById('paletteGrid');
             paletteGrid.innerHTML = '';
@@ -405,7 +393,6 @@
                 btn.type = "button";
                 btn.innerText = idx + 1;
                 
-                // Colorize state items
                 if(currentIdx === idx) {
                     btn.className = "p-2 text-xs font-bold rounded-lg text-center bg-blue-600 text-white shadow-sm";
                 } else if(userResponses[idx] !== null) {
@@ -437,15 +424,14 @@
             }, 1000);
         }
 
-        // Perform final paper checking logic based on official key mapping parameters
         function evaluateTestPaper() {
             if(testTimeSeconds > 0) {
                 if(!confirm("Are you sure you want to finish and submit this test paper right now?")) return;
             }
             
             clearInterval(countdownInterval);
-            document.getElementById('timerBox').className = "bg-gray-700 px-4 py-1.5 rounded-lg flex items-center space-x-2 text-md font-semibold text-gray-400";
-            document.getElementById('timerDisplay').innerText = "EXAM OVER";
+            document.getElementById('timerBox').className = "bg-gray-700 px-3 py-1 rounded-lg flex items-center space-x-2 text-xs font-semibold text-gray-400";
+            document.getElementById('timerDisplay').innerText = "OVER";
 
             let correctCount = 0;
             let wrongCount = 0;
@@ -458,18 +444,15 @@
                 }
             });
 
-            // JEECUP standard marks grading layout system rules
             const finalScore = (correctCount * 4); 
             const totalPossible = questions.length * 4;
             const accuracy = userResponses.filter(r => r!==null).length > 0 ? Math.round((correctCount / userResponses.filter(r => r!==null).length) * 100) : 0;
 
-            // Output state figures parameters values
             document.getElementById('resScore').innerText = `${finalScore} / ${totalPossible}`;
             document.getElementById('resCorrect').innerText = correctCount;
             document.getElementById('resWrong').innerText = wrongCount;
             document.getElementById('resAccuracy').innerText = `${accuracy}%`;
 
-            // Complete solutions tabular generator block loop items
             const solGrid = document.getElementById('solutionsGrid');
             solGrid.innerHTML = '';
             questions.forEach((q, idx) => {
@@ -477,16 +460,15 @@
                 const userAns = userResponses[idx] || "None";
                 const isCorrect = userAns === q.answer;
                 
-                box.className = `p-2.5 rounded-lg border text-xs flex flex-col items-center justify-center ${isCorrect ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-red-50 border-red-200 text-red-800'}`;
+                box.className = `p-2 rounded-lg border text-[11px] flex flex-col items-center justify-center ${isCorrect ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-red-50 border-red-200 text-red-800'}`;
                 box.innerHTML = `
                     <span class="font-bold">Q${idx+1}</span>
-                    <span class="mt-0.5">Key: <b>${q.answer}</b></span>
-                    <span>You: <b class="${userAns==='None'?'text-gray-400':''}">${userAns}</b></span>
+                    <span class="text-[10px]">Key: <b>${q.answer}</b></span>
+                    <span class="text-[10px]">You: <b class="${userAns==='None'?'text-gray-400':''}">${userAns}</b></span>
                 `;
                 solGrid.appendChild(box);
             });
 
-            // Hide workspace components switch display views instantly
             document.getElementById('testArea').classList.add('hidden');
             document.getElementById('footerNavControls').classList.add('hidden');
             document.getElementById('resultsArea').classList.remove('hidden');
@@ -494,5 +476,3 @@
     </script>
 </body>
 </html>
-
-```
